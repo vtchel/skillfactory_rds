@@ -51,16 +51,16 @@ def game_core_v4(number):
     count = 1
     start = 1
     end = MAX_INT
-    predict = get_median(start, end)
+    predict = get_median(start, end)    # определеяем середину
     while number != predict:
         count += 1
         if number > predict:
-            start = predict
+            start = predict             # сокращаем интервал, переносим начало
             predict = get_median(start, end)
         elif number < predict:
-            end = predict
+            end = predict               # сокращаем интервал, переносим конец
             predict = get_median(start, end)
-            if predict == end:
+            if predict == end:  # обработка пограничного состояния
                 predict -= 1
     return count         # выход из цикла, если угадали
 
