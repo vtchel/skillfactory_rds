@@ -41,7 +41,7 @@ def game_core_v3(number):
 
 
 def get_median(start, end):
-    res = int(round((end + start)/2, 0))
+    res = int((end + start)/2)   # ищется сеередина и округляется в меньшую сторону
     # print(res)
     return res
 
@@ -60,8 +60,6 @@ def game_core_v4(number):
         elif number < predict:
             end = predict               # сокращаем интервал, переносим конец
             predict = get_median(start, end)
-            if predict == end:  # обработка пограничного состояния
-                predict -= 1
     return count         # выход из цикла, если угадали
 
 
